@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://bsn22se3yc3hi"]
+
+[ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_pisk5"]
+[ext_resource type="Script" path="res://scripts/world_2d.gd" id="2_0qxta"]
+[ext_resource type="Script" path="res://scripts/splash_screen_manager.gd" id="2_bwohn"]
+[ext_resource type="PackedScene" uid="uid://b8vmykcqnw2qh" path="res://scenes/bg.tscn" id="2_u5g0b"]
+[ext_resource type="PackedScene" uid="uid://uh31l2uobfg1" path="res://scenes/platform.tscn" id="3_ukq3n"]
+[ext_resource type="PackedScene" uid="uid://jbhvg7sl014k" path="res://scenes/cat.tscn" id="4_cg6cy"]
+[ext_resource type="PackedScene" uid="uid://c76j71gk3rbjd" path="res://scenes/hud.tscn" id="7_y2vig"]
+[ext_resource type="PackedScene" uid="uid://csx0lfy3spx0h" path="res://scenes/game_over.tscn" id="8_d15vo"]
+
+[node name="GameController" type="Node"]
+script = ExtResource("1_pisk5")
+
+[node name="World_2D" type="Node2D" parent="."]
+script = ExtResource("2_0qxta")
+
+[node name="Bg" parent="World_2D" instance=ExtResource("2_u5g0b")]
+
+[node name="Platform" parent="World_2D" instance=ExtResource("3_ukq3n")]
+texture_filter = 1
+
+[node name="Cat" parent="World_2D" instance=ExtResource("4_cg6cy")]
+position = Vector2(49, 90)
+
+[node name="Camera2D" type="Camera2D" parent="World_2D"]
+position = Vector2(280, 80)
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SplashScreenManager" type="Control" parent="GUI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_bwohn")
+
+[node name="CenterContainer" type="CenterContainer" parent="GUI/SplashScreenManager"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Screen1" type="TextureRect" parent="GUI/SplashScreenManager/CenterContainer"]
+layout_mode = 2
+
+[node name="Screen2" type="TextureRect" parent="GUI/SplashScreenManager/CenterContainer"]
+layout_mode = 2
+
+[node name="HUD" parent="GUI" instance=ExtResource("7_y2vig")]
+
+[node name="GameOver" parent="GUI" instance=ExtResource("8_d15vo")]
+process_mode = 2
