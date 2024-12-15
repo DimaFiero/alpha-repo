@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxieo86nguf2o"]
+
+[ext_resource type="Script" path="res://scripts/autoload/refs.gd" id="1_s0khq"]
+
+[node name="Refs" type="Node"]
+script = ExtResource("1_s0khq")
+charcoal_gray = Color(0.294118, 0.294118, 0.294118, 1)
+cotton_white = Color(0.941176, 0.941176, 0.941176, 1)
+black = Color(0.0196078, 0.0196078, 0.0196078, 1)

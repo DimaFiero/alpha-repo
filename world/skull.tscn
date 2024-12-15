@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dk3hll1a4amt2"]
+
+[ext_resource type="Script" path="res://world/skull.gd" id="1_7kdpc"]
+[ext_resource type="Texture2D" uid="uid://cg0alnhoik74o" path="res://resources/img/obstacles/skull.png" id="2_qbc00"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqexm"]
+size = Vector2(10, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtk4r"]
+atlas = ExtResource("2_qbc00")
+region = Rect2(0, 0, 12, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iyujk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtk4r")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 10.0
+}]
+
+[node name="Skull" type="Area2D"]
+script = ExtResource("1_7kdpc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yqexm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_iyujk")
+animation = &"fly"
+autoplay = "fly"
+frame_progress = 0.980774
