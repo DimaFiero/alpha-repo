@@ -114,7 +114,7 @@ func new_game() -> void:
 
 func generate_obs() -> void:
 	# Generate platform obstaceles
-	if obstacles.is_empty() or last_obs.position.x < score + randi_range(30, 50):
+	if obstacles.is_empty() or last_obs.position.x < score + randi_range(100, 200):
 		var obs_type = obstacle_types[randi() % obstacle_types.size()]
 		var obs
 		var max_obs = difficulty + 1

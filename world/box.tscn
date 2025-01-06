@@ -1,18 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5kro3ir462na"]
 
-[ext_resource type="Texture2D" uid="uid://h0o7aidkyrux" path="res://resources/img/obstacles/wood_box_V2.png" id="1_w6qtu"]
+[ext_resource type="Texture2D" uid="uid://b047poddcsamp" path="res://resources/img/obstacles/cardboard_box.png" id="1_dgcyj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gq37"]
-size = Vector2(15, 15)
+size = Vector2(30, 21)
 
 [node name="Box" type="Area2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7.5, -7.5)
-shape = SubResource("RectangleShape2D_7gq37")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(5, -6)
-texture = ExtResource("1_w6qtu")
+position = Vector2(13, -9)
+texture = ExtResource("1_dgcyj")
 offset = Vector2(2.5, -1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(15, -10.5)
+shape = SubResource("RectangleShape2D_7gq37")

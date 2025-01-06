@@ -17,7 +17,7 @@ const MAX_FALL_VELOCITY = 300
 const JUMP_VELOCITY = -240
 const VARIABLE_JUMP_MULTIPLIER = 0.5
 const MAX_JUMPS = 1
-const JUMP_BUFFER_TIME = 0.15 # 9 frames
+const JUMP_BUFFER_TIME = 0.1 # 1 frame
 
 var jump_speed = JUMP_VELOCITY
 var jumps = 0
@@ -45,9 +45,6 @@ func _ready() -> void:
 	previous_state = states.Fall
 	current_state = states.Fall
 
-func _draw():
-	current_state.Draw()
-
 func _physics_process(delta: float) -> void:
 	
 	time += delta
@@ -69,7 +66,14 @@ func _physics_process(delta: float) -> void:
 	
 	# Commit movement
 	move_and_slide()
-	
+
+#endregion
+
+
+#region Custom Funtions
+
+func _draw():
+	current_state.Draw()
 
 func ChangeState(new_state):
 	if new_state != null:
@@ -78,11 +82,6 @@ func ChangeState(new_state):
 		previous_state.ExitState()
 		current_state.EnterState()
 		return
-	
-
-#endregion
-
-#region Custom Funtions
 
 func GetInputStates():
 	key_jump = Input.is_action_pressed("KeyJump")

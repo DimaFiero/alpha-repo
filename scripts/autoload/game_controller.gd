@@ -13,6 +13,7 @@ var hud_display
 
 #
 func _ready() -> void:
+	#Engine.time_scale = 0.3
 	#print("Game controller ready")
 	Global.game_controller = self
 	#current_gui_scene = $GUI/SplashScreenManager

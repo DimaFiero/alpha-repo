@@ -1,18 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://cf1yjjt5rx1iw"]
 
-[ext_resource type="Texture2D" uid="uid://bg6wbrfyghimx" path="res://resources/img/obstacles/barrel.png" id="1_x7y8w"]
+[ext_resource type="Texture2D" uid="uid://vifg3un8xagl" path="res://resources/img/obstacles/PROP_crate_large.png" id="1_aeh0a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2njai"]
-size = Vector2(20, 27)
+size = Vector2(48, 32)
 
 [node name="Barrel" type="Area2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(10, -13.5)
-shape = SubResource("RectangleShape2D_2njai")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(10, -14)
-texture = ExtResource("1_x7y8w")
+position = Vector2(24, -16.5)
+texture = ExtResource("1_aeh0a")
 offset = Vector2(0, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24, -16)
+shape = SubResource("RectangleShape2D_2njai")
